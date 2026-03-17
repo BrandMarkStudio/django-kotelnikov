@@ -1,0 +1,91 @@
+body.article {
+    background: #1abc9c;       /* фон */
+    font-family: Tahoma, Arial, sans-serif; /* шрифты */
+    color: #ffffff;            /* цвет текста */
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для логотипа */
+.header img {
+    display: block;            /* блочный элемент */
+    width: 318px;              /* фиксированная ширина */
+    margin-left: auto;         /* центрирование */
+    margin-right: auto;
+}
+
+/* Ссылка "Все записи" */
+.all-articles-link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.all-articles-link:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер с контентом */
+.content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Заголовок статьи */
+.article-title {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Блок с автором и датой */
+.article-info {
+    overflow: hidden; /* очищаем float */
+    margin-bottom: 20px;
+}
+
+.article-author {
+    float: left;
+    width: 50%;
+}
+
+.article-created-date {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+/* Текст статьи */
+.article-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Шапка */
+.header {
+    position: relative; /* чтобы внутри можно было absolute */
+    padding: 10px 20px; /* отступы сверху и по бокам */
+}
+
+/* Контейнер ссылок */
+.header-links {
+    position: absolute; /* абсолютное позиционирование */
+    top: 10px;          /* отступ сверху */
+    right: 20px;        /* отступ справа */
+}
+
+/* Ссылки внутри */
+.header-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;  /* расстояние между ссылками */
+    font-weight: bold;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}

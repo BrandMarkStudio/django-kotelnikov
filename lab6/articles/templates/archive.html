@@ -7,8 +7,14 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ STATIC_URL }}img/frame1.png" />
+    <img src="{{ STATIC_URL }}img/frame1.png" alt="Logo" />
+
+    <div class="header-links">
+        <a href="/" class="header-link">Все статьи</a>
+        <a href="/registration/" class="header-link">Регистрация</a>
+        <a href="/login/" class="header-link">Вход</a>
     </div>
+</div>
 
     <div class="archive">
         {% for post in posts %}

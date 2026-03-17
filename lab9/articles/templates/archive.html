@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Архив всех статей</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/article.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img class="logo" src="{{ STATIC_URL }}img/frame1.png" alt="Логотип"/>
+            </a>
+        </div>
+
+        <!-- Текст рядом -->
+        <div class="header-text-area">
+            <p class="service-title">Коллективный блог</p>
+        </div>
+
+        <!-- Иконки параллакса -->
+        <div class="icons-for-parallax">
+            <img class="icon-for-parallax-first" src="{{ STATIC_URL }}img/1.png" alt="Иконка 1">
+            <img class="icon-for-parallax-second" src="{{ STATIC_URL }}img/1.png" alt="Иконка 2">
+            <img class="icon-for-parallax-third" src="{{ STATIC_URL }}img/1.png" alt="Иконка 3">
+        </div>
+
+        <!-- Кнопки справа -->
+        <div class="header-buttons">
+            <a href="/" class="header-link">Все статьи</a>
+            <a href="/registration/" class="header-link">Регистрация</a>
+            <a href="/login/" class="header-link">Вход</a>
+        </div>
+    </div>
+
+    <div class="archive">
+        {% for post in posts %}
+        <div class="one-post">
+            <div class="one-post-inner">
+                <h2 class="post-title">
+                    <a href="{% url articles.views.get_article article_id=post.id %}">{{ post.title }}</a>
+                </h2>
+                <button class="fold-button">свернуть</button>
+                <div class="article-info">
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+            </div>
+            <!-- Блок тени -->
+            <div class="one-post-shadow"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Подключаем jQuery 1.12.4 с CDN перед своими скриптами -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="{{ STATIC_URL }}js/parallax.js"></script>
+    <script src="{{ STATIC_URL }}js/fold-post.js"></script>
+    <script src="{{ STATIC_URL }}js/helloworld.js"></script>
+    <script src="{{ STATIC_URL }}js/highlight-post.js"></script>
+</body>
+</html>

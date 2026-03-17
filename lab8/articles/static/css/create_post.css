@@ -1,0 +1,77 @@
+/* create_post.css или в article.css */
+
+/* Основной стиль страницы */
+body.article {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Центрируем логотип */
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ссылка "Все записи" */
+.all-articles-link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.all-articles-link:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер формы */
+.content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Заголовок формы */
+.content h1 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Поля формы */
+form input[type="text"], form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Кнопка отправки */
+form input[type="submit"] {
+    background: #ffffff;
+    color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background: #f0f0f0;
+}
+
+/* Ошибки формы */
+form p.error {
+    color: #ff4444;
+    font-weight: bold;
+}
