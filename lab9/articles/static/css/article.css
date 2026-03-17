@@ -7,12 +7,31 @@ body {
     padding: 0;
 }
 
+/* Шапка */
 .header {
+    display: flex;
+    justify-content: space-between; /* левый блок слева, правый блок справа */
+    align-items: center; /* центрируем по вертикали */
     position: relative;
     background-color: #1abc9c;
     padding: 10px 20px;
+    height: 320px; /* под параллакс */
     box-sizing: border-box;
-    height: 320px; /* увеличиваем высоту шапки под иконки параллакса */
+    position: relative; /* для абсолютного позиционирования логотипа */
+}
+
+/* Левый блок: логотип + текст */
+.header-left .header-text-area {
+    margin-left: 120px;  /* сдвигаем вправо от логотипа */
+    margin-top: 20px;    /* при необходимости немного вниз */
+    line-height: normal; /* чтобы текст корректно выравнивался */
+}
+
+/* Кнопки справа */
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
 /* Логотип кликабельный */
@@ -20,22 +39,26 @@ body {
     display: inline-block;
 }
 
+/* Стили логотипа */
 .logo {
+    position: absolute; /* ключевое изменение */
+    top: 100px;         /* начальное положение */
+    left: 20px;         /* слева */
     width: 80px;
     height: auto;
-    vertical-align: middle;
+    z-index: 5;         /* выше иконок */
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.25); /* увеличение без смещения соседей */
+    transform: scale(1.25);
 }
 
-.header-text-area {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 20px;
-    float: none; /* отменяем float, чтобы кнопки позиционировались относительно шапки */
+/* Текст шапки */
+ .service-title {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
 }
 
 .service-title {
@@ -46,12 +69,11 @@ body {
 }
 
 .header-buttons {
-    position: absolute;  /* фиксируем относительно .header */
-    top: 20px;           /* отступ сверху */
-    right: 20px;         /* отступ справа */
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
     gap: 15px;
-    z-index: 10;         /* чтобы всегда поверх остальных элементов */
 }
 
 .header-link {
@@ -64,11 +86,12 @@ body {
     text-decoration: underline;
 }
 
+/* Иконки параллакса остаются как у вас */
 .icons-for-parallax {
     position: absolute;
-    top: 50%;  /* вертикальный центр шапки */
-    left: 50%; /* центр шапки по горизонтали */
-    transform: translate(-50%, -50%); /* чтобы центрировать блок */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 300px;
     width: 250px;
 }
@@ -80,26 +103,26 @@ body {
 
 /* Передняя иконка */
 .icon-for-parallax-first {
-   width: 150px;
+    width: 200px;
     z-index: 3;
-    top: 50px;
-    left: 0;
+    margin-top: 100px; /* уменьшили вертикальное смещение */
+    left: 20px;
 }
 
 /* Средняя иконка */
 .icon-for-parallax-second {
-    width: 125px;
+    width: 175px;
     z-index: 2;
-    top: 25px;
-    left: 50px;
+    margin-top: 70px;
+    margin-left: 60px;
 }
 
 /* Задняя иконка */
 .icon-for-parallax-third {
-    width: 100px;
+    width: 150px;
     z-index: 1;
-    top: 0;
-    left: 100px;
+    margin-top: 40px;
+    margin-left: 120px;
 }
 
 /* Контейнер кнопок в правом верхнем углу */
@@ -135,9 +158,9 @@ body {
 /* Контейнер основного контента */
 .content, .archive {
     width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 20px;
-    margin-top: 20px;
 }
 
 /* Статьи */

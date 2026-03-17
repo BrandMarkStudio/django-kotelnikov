@@ -6,16 +6,22 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/article.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo-container">
+   <div class="header">
+        <!-- Левый блок: логотип + текст -->
+        <div class="header-left">
             <a href="/" class="logo-link">
                 <img class="logo" src="{{ STATIC_URL }}img/frame1.png" alt="Логотип"/>
             </a>
+            <div class="header-text-area">
+                <p class="service-title">Коллективный блог</p>
+            </div>
         </div>
 
-        <!-- Текст рядом -->
-        <div class="header-text-area">
-            <p class="service-title">Коллективный блог</p>
+        <!-- Правый блок: кнопки -->
+        <div class="header-right">
+            <a href="/" class="header-link">Все статьи</a>
+            <a href="/registration/" class="header-link">Регистрация</a>
+            <a href="/login/" class="header-link">Вход</a>
         </div>
 
         <!-- Иконки параллакса -->
@@ -23,13 +29,6 @@
             <img class="icon-for-parallax-first" src="{{ STATIC_URL }}img/1.png" alt="Иконка 1">
             <img class="icon-for-parallax-second" src="{{ STATIC_URL }}img/1.png" alt="Иконка 2">
             <img class="icon-for-parallax-third" src="{{ STATIC_URL }}img/1.png" alt="Иконка 3">
-        </div>
-
-        <!-- Кнопки справа -->
-        <div class="header-buttons">
-            <a href="/" class="header-link">Все статьи</a>
-            <a href="/registration/" class="header-link">Регистрация</a>
-            <a href="/login/" class="header-link">Вход</a>
         </div>
     </div>
 
