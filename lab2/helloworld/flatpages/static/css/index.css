@@ -1,0 +1,43 @@
+/* index.css */
+body {
+    background: #22a188;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #333;
+}
+
+/* Заголовок первого уровня с шрифтом с засечками */
+h1 {
+    font-family: "Times New Roman", Georgia, serif;
+}
+
+/* Подзаголовки четвертого уровня: шрифт 14px */
+h4 {
+    font-size: 14px;
+}
+
+/* Общие стили для параграфов */
+p {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+/* Списки без отступов */
+ul, ol {
+    margin: 0;
+}
+
+/* Таблица на 100% ширины */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Ячейки таблицы с padding */
+table tr td {
+    padding: 5px;
+}
+
+/* Картинка фиксированной высоты 30px */
+img {
+    height: 30px;
+}
