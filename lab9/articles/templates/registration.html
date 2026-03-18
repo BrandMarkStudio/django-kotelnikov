@@ -8,18 +8,25 @@
 </head>
 <body class="article">
     <div class="header">
-    <img src="{{ STATIC_URL }}img/frame1.png" alt="Logo" />
+        <img src="{{ STATIC_URL }}img/frame1.png" alt="Logo" />
 
-    <div class="header-links">
-        <a href="/" class="header-link">Все статьи</a>
-        <a href="/registration/" class="header-link">Регистрация</a>
-        <a href="/login/" class="header-link">Вход</a>
+        <div class="header-links">
+            <a href="/" class="header-link">Все статьи</a>
+            {% if user.is_authenticated %}
+                <span class="header-link">{{ user.username }}</span>
+                <a href="/article/new/" class="header-link">Написать статью</a>
+                <a href="/logout/" class="header-link">Выход</a>
+            {% else %}
+                <a href="/registration/" class="header-link">Регистрация</a>
+                <a href="/login/" class="header-link">Вход</a>
+            {% endif %}
+        </div>
     </div>
-</div>
 
     <div class="content">
         <h1>Регистрация нового пользователя</h1>
         <form method="POST">{% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
             <input type="text" name="username" placeholder="Имя пользователя" value="{{ form.username }}">
             <input type="email" name="email" placeholder="Email" value="{{ form.email }}">
             <input type="password" name="password" placeholder="Пароль">

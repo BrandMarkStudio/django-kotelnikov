@@ -4,12 +4,24 @@
 <head>
     <meta charset="utf-8">
     <title>Django Public Blog - создать статью</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/article.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/create_post.css">
 </head>
 <body class="article">
     <div class="header">
         <img src="{{ STATIC_URL }}img/frame1.png" alt="Logo" />
-        <a href="/" class="all-articles-link">Все статьи</a>
+
+        <div class="header-links">
+            <a href="/" class="header-link">Все статьи</a>
+            {% if user.is_authenticated %}
+                <span class="header-link">{{ user.username }}</span>
+                <a href="/article/new/" class="header-link">Написать статью</a>
+                <a href="/logout/" class="header-link">Выход</a>
+            {% else %}
+                <a href="/registration/" class="header-link">Регистрация</a>
+                <a href="/login/" class="header-link">Вход</a>
+            {% endif %}
+        </div>
     </div>
 
     <div class="content">

@@ -7,7 +7,6 @@
 </head>
 <body>
    <div class="header">
-        <!-- Левый блок: логотип + текст -->
         <div class="header-left">
             <a href="/" class="logo-link">
                 <img class="logo" src="{{ STATIC_URL }}img/frame1.png" alt="Логотип"/>
@@ -17,14 +16,18 @@
             </div>
         </div>
 
-        <!-- Правый блок: кнопки -->
         <div class="header-right">
             <a href="/" class="header-link">Все статьи</a>
-            <a href="/registration/" class="header-link">Регистрация</a>
-            <a href="/login/" class="header-link">Вход</a>
+            {% if user.is_authenticated %}
+                <span class="header-link">{{ user.username }}</span>
+                <a href="/article/new/" class="header-link">Написать статью</a>
+                <a href="/logout/" class="header-link">Выход</a>
+            {% else %}
+                <a href="/registration/" class="header-link">Регистрация</a>
+                <a href="/login/" class="header-link">Вход</a>
+            {% endif %}
         </div>
 
-        <!-- Иконки параллакса -->
         <div class="icons-for-parallax">
             <img class="icon-for-parallax-first" src="{{ STATIC_URL }}img/1.png" alt="Иконка 1">
             <img class="icon-for-parallax-second" src="{{ STATIC_URL }}img/1.png" alt="Иконка 2">
@@ -46,12 +49,10 @@
                 </div>
                 <p class="article-text">{{ post.get_excerpt }}</p>
             </div>
-            <!-- Блок тени -->
             <div class="one-post-shadow"></div>
         </div>
         {% endfor %}
     </div>
-    <!-- Подключаем jQuery 1.12.4 с CDN перед своими скриптами -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
             crossorigin="anonymous"></script>
